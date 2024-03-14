@@ -1,0 +1,31 @@
+const mongoose=require('mongoose');
+const userSchema=new mongoose.Schema({
+    name:{
+        type:String,
+        trim:true,
+        required:true
+    },
+    email:{
+        type:String,
+        trim:true,
+        required:true
+    },
+    github:{
+        type:String,
+        trim:true,
+    },
+    linkedin:{
+        type:String,
+        trim:true
+    },
+    coins:{
+        type:Number,
+        default:0
+    },
+    img:{
+        data: Buffer, // Store the image data as a Buffer
+        contentType: String
+    }
+})
+const User=mongoose.model('user',userSchema);
+module.exports=User;
