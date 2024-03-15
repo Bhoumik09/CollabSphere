@@ -14,6 +14,13 @@ const projectSchema=new mongoose.Schema({
         type:String,
         trim:true,
     },
+    skills:[
+        {
+            type:mongoose.Schema.Types.ObjectId,
+            ref:"Skill"
+        }
+    ]
+    
     
 })
 const ProjectModel=mongoose.model('project',projectSchema);

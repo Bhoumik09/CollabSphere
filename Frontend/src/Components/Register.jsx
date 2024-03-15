@@ -59,7 +59,7 @@ function Register({user,setUser}) {
             <p className="title">Account Info</p>
             <p className="message">Register now and get full access to our app.</p>
             <label htmlFor="upload-image" className="upload-button">Upload Image</label>
-            <input type="file" id="upload-image" style={{display: 'none'}} ref={picRef} />
+            <input type="file" id="upload-image" style={{display: 'none'}} ref={picRef} required />
             <div className="flex">
               <label>
                 <input className="input" type="text" ref={nameRef} required />

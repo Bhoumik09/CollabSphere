@@ -25,7 +25,13 @@ const userSchema=new mongoose.Schema({
     img:{
         data: Buffer, // Store the image data as a Buffer
         contentType: String
-    }
+    },
+    skills:[
+        {
+            type:mongoose.Schema.Types.ObjectId,
+            ref:"Skill"
+        }
+    ]
 })
-const User=mongoose.model('user',userSchema);
+const User=mongoose.model('User',userSchema);
 module.exports=User;
