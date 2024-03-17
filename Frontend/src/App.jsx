@@ -40,8 +40,8 @@ function App() {
       
       <Routes>
         <Route path='/' element={user==null?<Land user={user}/>:user.profileExists?<Land user={user.user}/>:<Navigate to="/register"/>}/>
-        <Route path='/leader' element={user==null?<Land user={user}/>:<Leader user={user.user}/>}/>
-        <Route path='/register' element={user==null?<Land user={user}/>:<Register user={user.user} setUser={setUser}/>}/>
+        <Route path='/leader' element={user==null?<Navigate to='/'/>:<Leader user={user.user}/>}/>
+        <Route path='/register' element={user==null?<Navigate to='/'/>:<Register user={user.user} setUser={setUser}/>}/>
       </Routes>
       
     </div>

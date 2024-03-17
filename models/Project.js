@@ -1,5 +1,19 @@
 
 const mongoose=require('mongoose');
+const taskSchema = new mongoose.Schema({
+    description: {
+        type: String,
+        required: true
+    },
+    assignee: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User"
+    },
+    completed: {
+        type: Boolean,
+        default: false
+    }
+});
 const projectSchema=new mongoose.Schema({
     author:{
         type:mongoose.Schema.Types.ObjectId,
@@ -19,9 +33,18 @@ const projectSchema=new mongoose.Schema({
             type:mongoose.Schema.Types.ObjectId,
             ref:"Skill"
         }
-    ]
-    
-    
+    ],
+    status:{
+        type:Boolean,
+        trim:true
+    },
+    contributors:[
+        {
+            type:mongoose.Schema.Types.ObjectId,
+            refL:"User"
+        }
+    ],
+    tasks:[taskSchema]
 })
-const ProjectModel=mongoose.model('project',projectSchema);
-module.exports=ProjectModel;
+const Project=mongoose.model('project',projectSchema);
+module.exports=Project;

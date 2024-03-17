@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react'
 import '../assets/css/Register.css'
 import axios from 'axios'
+import random from 'random'
 import { Navigate, useNavigate } from 'react-router-dom';
 function Register({user,setUser}) {
   
@@ -27,7 +28,10 @@ function Register({user,setUser}) {
     const linkedin = linkRef.current.value;
     const img = picRef.current.files[0];
     const formData = new FormData();
-    formData.append('name', name);
+    let nameArr=JSON.stringify(name.split(' '));
+    console.log(nameArr);
+    
+    formData.append('name', nameArr);
     formData.append('email', email);
     formData.append('github', github);
     formData.append('linkedin', linkedin);

@@ -1,4 +1,5 @@
 const mongoose=require('mongoose');
+
 const userSchema=new mongoose.Schema({
     name:{
         type:String,
@@ -30,6 +31,13 @@ const userSchema=new mongoose.Schema({
         {
             type:mongoose.Schema.Types.ObjectId,
             ref:"Skill"
+        }
+    ]
+    ,
+    projects:[
+        {
+            type:mongoose.Schema.Types.ObjectId,
+            ref:'Project'
         }
     ]
 })

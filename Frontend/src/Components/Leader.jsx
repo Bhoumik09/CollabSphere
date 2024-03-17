@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react'
 
-function Leader() {
+function Leader({props}) {
   let [leader,SetLeader]=useState([]);
   useEffect(()=>{
-    
   })
   return (
     <div>
