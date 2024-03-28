@@ -5,6 +5,7 @@ import Nav from './Components/Nav'
 import Land from './Components/Land'
 import axios from 'axios'
 import Register from './Components/Register'
+import Home from './Components/Home'
 function App() {
   const [user, setUser] = useState(null);
   useEffect(() => {
@@ -24,8 +25,15 @@ function App() {
           throw new Error("authentication has been failed!");
         })
         .then((resObject) => {
-          console.log(resObject);
-          setUser(resObject);
+          
+          setUser(prevUser => {
+            // Only update if user value has changed
+            if (JSON.stringify(prevUser) !== JSON.stringify(resObject)) {
+              return resObject;
+            } else {
+              return prevUser;
+            }
+          });
         })
         .catch((err) => {
 
@@ -33,15 +41,17 @@ function App() {
         });
     };
     getUser();
-  }, []);
+  }, [user]);
   console.log(user)
   return (
     <div>
       
       <Routes>
         <Route path='/' element={user==null?<Land user={user}/>:user.profileExists?<Land user={user.user}/>:<Navigate to="/register"/>}/>
-        <Route path='/leader' element={user==null?<Navigate to='/'/>:<Leader user={user.user}/>}/>
         <Route path='/register' element={user==null?<Navigate to='/'/>:<Register user={user.user} setUser={setUser}/>}/>
+        <Route path='/home'  element={user==null?<Navigate to='/'/>:<Home user={user}/> }/>
+        <Route path='/leader' element={user==null?<Navigate to='/'/>:<Home user={user}/>}/>
+        <Route path='/profile' element={user==null?<Navigate to='/'/>:<Home user={user}/>}/>
       </Routes>
       
     </div>

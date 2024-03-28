@@ -4,11 +4,20 @@ const User = require('../models/User');
 const router = express.Router();
 const CLIENT_URL = "http://localhost:5173/";
 let successLogin=0;
-function checkSuccess(){
-    if(successLogin)return true;
-    else return false;}
+async function getId(email){
+    try {
+        if(email===undefined)return -1;
+        
+        const user = await User.findOne({ email: email });
+        return user._id  // Returns true if user exists, false otherwise
+    } catch (error) {
+        console.error("Error checking email:", error);
+        return -1;
+    }
+}
 // Function to check if email exists in the database
 const checkEmail = async (email) => {
+
     try {
         if(email===undefined)return false;
         console.log(email)
@@ -37,7 +46,8 @@ router.get('/auth/login/success', async(req, res) => {
             success: true,
             message: "successful",
             user: req.user,
-            profileExists:await checkEmail(req.user.emails[0].value)
+            profileExists:await checkEmail(req.user.emails[0].value),
+            id:await getId(req.user.emails[0].value)
         });
     }
 });

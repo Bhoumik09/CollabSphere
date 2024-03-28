@@ -1,91 +1,34 @@
-import React, { useRef } from 'react'
+import React from 'react'
 
 function Tyr() {
-    const nameRef = useRef();
-    const emailRef = useRef();
-    const githubRef = useRef();
-    const linkedinRef = useRef();
-    const skillsRef = useRef([]);
-    const fileInput=useRef();
-    const handleCheckboxChange = (event) => {
-        const { value, checked } = event.target;
-        if (checked) {
-            skillsRef.current.push(value);
-        } else {
-            skillsRef.current = skillsRef.current.filter(skill => skill !== value);
-        }
-    };
-    const handleSubmit = async (event) => {
-        event.preventDefault();
-
-        const formData = {
-            name: nameRef.current.value,
-            email: emailRef.current.value,
-            github: githubRef.current.value,
-            linkedin: linkedinRef.current.value,
-            skills: skillsRef.current
-        };
-
-        try {
-            const response = await fetch('/api/users', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(formData)
-            });
-
-            if (response.ok) {
-                console.log('Form submitted successfully');
-            } else {
-                console.error('Failed to submit form');
-            }
-        } catch (error) {
-            console.error('Error:', error);
-        }
-    };
-
   return (
-    <div>
-        <form onSubmit={handleSubmit}>
-            <label>
-                Name:
-                <input type="text" ref={nameRef} />
-            </label>
-            <br />
-            <label>
-                Email:
-                <input type="email" ref={emailRef} />
-            </label>
-            <br />
-            <label>
-                GitHub:
-                <input type="text" ref={githubRef} />
-            </label>
-            <br />
-            <label>
-                LinkedIn:
-                <input type="text" ref={linkedinRef} />
-            </label>
-            <br />
-            <label>Skills:</label>
-            <br />
-            <label>
-                <input type="checkbox" value="HTML" onChange={handleCheckboxChange} /> HTML
-            </label>
-            <br />
-            <label>
-                <input type="checkbox" value="CSS" onChange={handleCheckboxChange} /> CSS
-            </label>
-            <br />
-            <label>
-                <input type="checkbox" value="JavaScript" onChange={handleCheckboxChange} /> JavaScript
-            </label>
-            {/* Add more checkboxes for other skills as needed */}
-            <br />
-            <button type="submit">Submit</button>
-        </form>
-    </div>
+    
+      <div className="home-div">
+        <i className='bx bx-search-alt' id="home-search"></i>
+        <input className="search-box" type="search" placeholder="Search Community"/>
+
+        <div className="hero-div">
+            <img className="hero-img" src="banner1.png" alt="banner"/>
+        </div>
+
+        <header>Featured Communties</header>
+
+        <div className="communities">
+            <div className="community-1">
+                <a href="#"><img src="website-development-banner.avif" alt="web-dev"/></a>
+            </div>
+            <div className="community-2">
+                <a href="#"><img src="android-dev-banner.jpg" alt="machine-learing"/></a>
+            </div>
+            <div className="community-3">
+                <a href="#"><img src="machine-learning-banner2.jpg" alt="machine-learing"/></a>
+            </div>
+            <div className="community-4">
+                <a href="#"><img src="ui-banner2.jpg" alt="machine-learing"/></a>
+            </div>
+        </div>
+        </div>
+    
   )
 }
 

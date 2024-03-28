@@ -64,13 +64,13 @@ function Register({user,setUser}) {
             <p className="message">Register now and get full access to our app.</p>
             <label htmlFor="upload-image" className="upload-button">Upload Image</label>
             <input type="file" id="upload-image" style={{display: 'none'}} ref={picRef} required />
-            <div className="flex">
+            
               <label>
                 <input className="input" type="text" ref={nameRef} required />
                 <span>Name</span>
               </label>
-              <br /> 
-            </div>
+              
+            
             <label>
               <input className="input" type="email" ref={emailRef}  value={user.emails[0].value} disabled />
               <span>Email</span>

@@ -6,6 +6,7 @@ const passport = require('passport');
 const session = require('express-session');
 const authRoutes=require('./routes/auth');
 const mongoose=require('mongoose');
+const leaderRoutes=require('./routes/leaderBoard')
 const feedbackRoutes=require('./routes/feedback')
 const userCreateRoutes=require('./routes/user')
 const bodyParser=require('body-parser');
@@ -61,4 +62,5 @@ app.use(bodyParser.json())
 app.use(authRoutes);
 app.use(feedbackRoutes);
 app.use(userCreateRoutes);
+app.use(leaderRoutes);
 app.listen(8000);

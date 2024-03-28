@@ -12,12 +12,16 @@ import rect1 from '../assets/images/Rectangle-1.svg'
 import rect2 from '../assets/images/Rectangle-2.svg'
 import polyTriangle2 from '../assets/images/Polygon_2_triangle.svg'
 import darklogo from '../assets/images/collabsphere-logo-dark-1.svg'
+import { useNavigate } from 'react-router-dom'
 
 function Features() {
     const nameRef = useRef(null);
     const emailRef = useRef(null);
     const messageRef = useRef(null);
-
+    let navigate=useNavigate();
+    function join(){
+        navigate('/home');
+    }
     const feedback = async(event) => {
         event.preventDefault();
 
@@ -28,6 +32,7 @@ function Features() {
         await axios.post('http://localhost:8000/feedback',{name,email,message});
         event.target.reset();
     };
+    
   return (
     <Fragment>
         <div className="container">
@@ -37,7 +42,7 @@ function Features() {
         <div className="text-container">
             <h1 className="hero-label">Connect, Collaborate, and Learn with CollabSphere</h1>
             <p className="hero-desc">Join our vibrant community and unlock endless possibilities...</p>
-            <button className="hero-button">Join Community <i className="arrow right"></i></button>
+            <button className="hero-button" onClick={join}>Join Community <i className="arrow right"></i></button>
         </div>
     </div>
     
@@ -48,8 +53,8 @@ function Features() {
             
             <img className="feature-1-image" src={community} alt="Join community" />
             <div className="feature-1-content">
-                <h1 className="feature-1-label">Join a Thriving Tech Community...</h1>
-                <p className="feature-1-desc">Discover a vibrant space where tech enthusiasts come together to share knowledge, learn from experts, and engage in meaningful discussions.</p>
+                <h1 className="feature-1-label">Join a Thriving Tech<br></br> Community...</h1>
+                <p className="feature-1-desc">Discover a vibrant space where tech enthusiasts<br></br> come together to share knowledge, learn from experts, and engage in meaningful discussions.</p>
             </div>
         </div>
 
@@ -76,7 +81,7 @@ function Features() {
             </div>
             <div className="feature-3-content">
                 <h1 className="feature-3-label">Earn points and climb the leaderboard by completing projects...</h1>
-                <p className="feature-3-desc">Get recognized for your contributions and achievements and establish yourself in your domain.</p>
+                <p className="feature-3-desc">Get recognized for your contributions and<br></br> achievements and establish yourself in your<br></br> domain.</p>
             </div>
         </div>
 
@@ -115,8 +120,8 @@ function Features() {
             <p className="contact-content">Reach out to us !</p>
         </div>
 
-        <div className="contact-form">
-            <form onSubmit={feedback}>
+        <div>
+            <form onSubmit={feedback} className='contact-form'>
                 <input type="text" id="name"  ref={nameRef} placeholder="Name"/>
                 <input type="text" id="email" ref={emailRef} placeholder="Email"/>
                 <input type="text" id="message" ref={messageRef} placeholder="Message"/>
@@ -128,9 +133,8 @@ function Features() {
     </div>
 
     <img className="rectangle-1" src={rect1} alt="shape" />
-    <img className="polygon-2" src={polyTriangle2} alt="shape" />
 
-    
+    <hr></hr>
 
     <div className="footer">
         <div className="footer-logo">
