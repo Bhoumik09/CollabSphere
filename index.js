@@ -19,8 +19,7 @@ app.use(session({
     resave: false,
     saveUninitialized: false
 }));
-const GOOGLE_CLIENT_ID = "932573291552-11cs6icocjsd009svu3u396js4v284nh.apps.googleusercontent.com"
-const GOOGLE_CLIENT_SECRET = "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"
+
 passport.use(
     new GoogleStrategy(
       {
