@@ -1,5 +1,7 @@
 const express=require('express');
 const app=express();
+const dotenv = require('dotenv');
+
 const multer=require('multer');
 const cors=require('cors');
 const passport = require('passport');
@@ -22,8 +24,9 @@ app.use(session({
     resave: false,
     saveUninitialized: false
 }));
-const GOOGLE_CLIENT_ID = "932573291552-iioiqebr3neqgp23df7g4a0feh73en0k.apps.googleusercontent.com"
-const GOOGLE_CLIENT_SECRET = "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"
+dotenv.config();
+const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID;
+const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET;
 passport.use(
     new GoogleStrategy(
       {
