@@ -8,19 +8,22 @@ const authRoutes=require('./routes/auth');
 const mongoose=require('mongoose');
 const leaderRoutes=require('./routes/leaderBoard')
 const feedbackRoutes=require('./routes/feedback')
-const userCreateRoutes=require('./routes/user')
+const userCreateRoutes=require('./routes/user');
+const communityRoutes=require('./routes/Comm');
+let projectRoutes=require('./routes/project');
 const bodyParser=require('body-parser');
 const User = require('./models/User');
+const createCommunities = require('./seed');
 mongoose.connect('mongodb://127.0.0.1:27017/discord');
-// seedJs();
+// createCommunities()
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
 app.use(session({
     secret: 'your-secret-key',
     resave: false,
     saveUninitialized: false
 }));
-const GOOGLE_CLIENT_ID = "932573291552-11cs6icocjsd009svu3u396js4v284nh.apps.googleusercontent.com"
-const GOOGLE_CLIENT_SECRET = "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"
+const GOOGLE_CLIENT_ID = "932573291552-iioiqebr3neqgp23df7g4a0feh73en0k.apps.googleusercontent.com"
+const GOOGLE_CLIENT_SECRET = "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"
 passport.use(
     new GoogleStrategy(
       {
@@ -63,4 +66,7 @@ app.use(authRoutes);
 app.use(feedbackRoutes);
 app.use(userCreateRoutes);
 app.use(leaderRoutes);
+app.use(projectRoutes);
+app.use(communityRoutes);
+// createCommunities();
 app.listen(8000);

@@ -1,12 +1,13 @@
 import React from "react";
-function LeaderComp({data,index}) {
+import { Link } from "react-router-dom";
+function LeaderComp({data,index,user}) {
   return (
     <div>
-      <div className="box">
+      <Link to={`/app/profile/${data.id}`} className="box" id={data.id} o>
         <div>{index}</div>
         <div>{data.name}</div>
         <div>{data.coins}</div>
-      </div>
+      </Link>
     </div>
   );
 }

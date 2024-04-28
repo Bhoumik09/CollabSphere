@@ -20,7 +20,7 @@ function Features() {
     const messageRef = useRef(null);
     let navigate=useNavigate();
     function join(){
-        navigate('/home');
+        navigate('/app/home');
     }
     const feedback = async(event) => {
         event.preventDefault();

@@ -11,6 +11,7 @@ function Register({user,setUser}) {
   const picRef=useRef();
   const gitRef=useRef();
   const linkRef=useRef();
+  const RegRef=useRef();
   const [skills,setSkills]=useState([]);
   function handleChange(e){
     let skill=e.target.value;
@@ -28,15 +29,15 @@ function Register({user,setUser}) {
     const linkedin = linkRef.current.value;
     const img = picRef.current.files[0];
     const formData = new FormData();
+    const reg=RegRef.current.value;
     let nameArr=JSON.stringify(name.split(' '));
-    console.log(nameArr);
-    
     formData.append('name', nameArr);
     formData.append('email', email);
     formData.append('github', github);
     formData.append('linkedin', linkedin);
     formData.append('img', img);
     formData.append('skills', JSON.stringify(skills));
+    formData.append('reg', reg);
     try {
       const response = await axios.post('http://localhost:8000/new/profile', formData, {
         headers: {
@@ -54,14 +55,12 @@ function Register({user,setUser}) {
       console.error('Error submitting form:', error);
     }
   }
-  console.log("This is register");
-  console.log()
   return (
       <div >
         <div className="form-container">
           <form className="form" onSubmit={handleForm}>
-            <p className="title">Account Info</p>
-            <p className="message">Register now and get full access to our app.</p>
+            <p className="title">Complete your profile</p>
+            <p className="message">Fill in your information and jump into our app.</p>
             <label htmlFor="upload-image" className="upload-button">Upload Image</label>
             <input type="file" id="upload-image" style={{display: 'none'}} ref={picRef} required />
             
@@ -70,7 +69,10 @@ function Register({user,setUser}) {
                 <span>Name</span>
               </label>
               
-            
+            <label>
+              <input className="input" type="registration" ref={RegRef}  placeholder='Only for VIT STUDENTS' />
+              <span>Registration Number(optional)</span>
+            </label>
             <label>
               <input className="input" type="email" ref={emailRef}  value={user.emails[0].value} disabled />
               <span>Email</span>
@@ -93,7 +95,7 @@ function Register({user,setUser}) {
                       <polyline points="1.5 6 4.5 9 10.5 1" />
                     </svg>
                   </span>
-                  <span>MERN Stack</span>
+                  <span>Web Development</span>
                 </label>
               </div>
               <div className="checkbox-wrapper">
@@ -115,7 +117,7 @@ function Register({user,setUser}) {
                       <polyline points="1.5 6 4.5 9 10.5 1" />
                     </svg>
                   </span>
-                  <span>AI</span>
+                  <span>AIML</span>
                 </label>
               </div>
               <div className="checkbox-wrapper">
@@ -126,7 +128,7 @@ function Register({user,setUser}) {
                       <polyline points="1.5 6 4.5 9 10.5 1" />
                     </svg>
                   </span>
-                  <span>ML</span>
+                  <span>Cybersecurity</span>
                 </label>
               </div>
               <div className="checkbox-wrapper">
@@ -137,7 +139,7 @@ function Register({user,setUser}) {
                       <polyline points="1.5 6 4.5 9 10.5 1" />
                     </svg>
                   </span>
-                  <span>Android Dev</span>
+                  <span>Android Development</span>
                 </label>
               </div>
               <div className="checkbox-wrapper">

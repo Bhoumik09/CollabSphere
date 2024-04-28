@@ -35,8 +35,23 @@ body{
     color: white;
     font-family: 'Inter', sans-serif;
 }
-
-
+.search-results{
+    margin-top: 10px;
+    grid-template-columns: 1fr;
+}
+.card-search {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 1fr;
+    justify-content: center;
+    align-items: center;
+    width: inherit;
+    height: 50px;
+    border-radius: 30px;
+    background: lightgrey;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 50px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 26px -18px inset;
+  }
+  
 .join-header{
     color: white;
     border: 1px solid;
@@ -83,7 +98,55 @@ body{
     margin-top: 10px;
     color: #BCB6B6;
 }
-
+.searchBox {
+    margin-top: 20px;
+    display: flex;
+    max-width: 500px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    background: #2f3640;
+    border-radius: 50px;
+    position: relative;
+  }
+  
+  .searchButton {
+    color: white;
+    position: absolute;
+    right: 8px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--gradient-2, linear-gradient(90deg, #2AF598 0%, #009EFD 100%));
+    border: 0;
+    display: inline-block;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  }
+  /*hover effect*/
+  button:hover {
+    color: #fff;
+    background-color: #1A1A1A;
+    box-shadow: rgba(0, 0, 0, 0.5) 0 10px 20px;
+    transform: translateY(-3px);
+  }
+  /*button pressing effect*/
+  button:active {
+    box-shadow: none;
+    transform: translateY(0);
+  }
+  
+  .searchInput {
+    border: none;
+    background: none;
+    outline: none;
+    color: white;
+    font-size: 15px;
+    width: 480px;
+    padding: 24px 46px 24px 26px;
+    border-radius: 10px;
+  }
+  
+  
 .hero-button{
     color: white;
     border: 1px solid;
@@ -342,7 +405,7 @@ body{
     font-family: 'Poppins', sans-serif;
     color: white;
     font-size: 40px;
-    margin-left: 60px;
+    margin-left: 260px;
 }
 
 .feature-cards{
@@ -356,6 +419,7 @@ body{
     margin-top: 140px;
     height: 70px;
     width: 65px;
+    margin-left: 90px;
 }
 
 .join-project-desc{
@@ -369,7 +433,7 @@ body{
     margin-top: 150px;
     height: 60px;
     width: 48px;
-    
+    margin-left: 135px;
 }
 
 .assign-task-desc{
@@ -383,7 +447,7 @@ body{
     margin-top: 150px;
     height: 60px;
     width: 48px;
-    
+    margin-left: 80px;
 }
 
 .reward-desc{

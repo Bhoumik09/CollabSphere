@@ -1,23 +1,15 @@
 
 const mongoose=require('mongoose');
-const taskSchema = new mongoose.Schema({
-    description: {
-        type: String,
-        required: true
-    },
-    assignee: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "User"
-    },
-    completed: {
-        type: Boolean,
-        default: false
-    }
-});
+
 const projectSchema=new mongoose.Schema({
     author:{
         type:mongoose.Schema.Types.ObjectId,
         ref:"User"
+    },
+    field:{
+        type:String,
+        trim:true,
+        required:true
     },
     name:{
         type:String,
@@ -28,15 +20,11 @@ const projectSchema=new mongoose.Schema({
         type:String,
         trim:true,
     },
-    skills:[
-        {
-            type:mongoose.Schema.Types.ObjectId,
-            ref:"Skill"
-        }
-    ],
+    
     status:{
         type:Boolean,
-        trim:true
+        trim:true,
+        default:true
     },
     contributors:[
         {
@@ -44,7 +32,22 @@ const projectSchema=new mongoose.Schema({
             refL:"User"
         }
     ],
-    tasks:[taskSchema]
+    github:{
+        type:String,
+        trim:true,
+    },
+    request:[
+        {
+            type:mongoose.Schema.Types.ObjectId,
+            refL:"User"
+        }
+    ],
+    blocked:[
+        {
+            type:mongoose.Schema.Types.ObjectId,
+            refL:"User"
+        }
+    ]
 })
 const Project=mongoose.model('project',projectSchema);
 module.exports=Project;

@@ -1,0 +1,125 @@
+.dashboard{
+    display: block;
+    position: relative;
+    left: 260px;
+    top: 2%;
+    height: 96vh;
+    width: 78vw;
+    /* background-color: green; */
+}
+
+.dashboard header{
+    position: relative;
+    color: white;
+    left: 9px;
+}
+
+
+.request_box{
+    position: relative;
+    top: 30px;
+    left: 5px;
+    height: 500px;
+    width: 1000px;
+    border-radius: 10px;
+    background-color: #20283F;
+}
+
+.request_box header{
+    position: relative;
+    top:8px;
+    left: 10px;
+    color: rgb(213, 212, 212);
+    font-size: 15px;
+}
+
+.request_box a{
+    position: relative;
+    top: -15px;
+    left: 785px;
+    text-decoration: none;
+    color: rgb(213, 212, 212);
+}
+
+.request_list ul{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.request_list{
+    position: relative;
+    top: 30px;
+    left: 15px;
+}
+
+.request_list li{
+    list-style: none;
+}
+
+.users{
+    background-color: #1f589f;
+    height: 10vh;
+    width: 75vw;
+    display: flex;
+    align-items: center;
+    border: 2px solid #20283F;
+    border-radius: 10px;
+}
+
+.user-img img{
+    position: relative;
+    left: 16px;
+    top: 2px;
+    height: 42px;
+    width: 42px;
+    border-radius: 8px;
+}
+
+.info{
+    color: white;
+    position: relative;
+    left: 50px;
+}
+
+.profile-btn button{
+    position: relative;
+    left: 550px;
+    background-color: #20283F;
+    color: white;
+    border-radius: 15px;
+    height: 30px;
+    width: 100px;
+    border: none;
+    cursor: pointer;
+}
+
+.accept button{
+    position: relative;
+    left: 575px;
+    background-color: rgb(56, 198, 56);
+    border-radius: 30px;
+    height: 40px;
+    width: 40px;
+    border: 2px solid white;
+    cursor: pointer;
+}
+
+.accept button i {
+    font-size: 24px; 
+}
+
+.reject button{
+    position: relative;
+    left: 600px;
+    background-color: red;
+    border-radius: 30px;
+    height: 40px;
+    width: 40px;
+    border: 2px solid white;
+    cursor: pointer;
+}
+
+.reject button i {
+    font-size: 24px; 
+}

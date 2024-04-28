@@ -32,14 +32,14 @@ const userSchema=new mongoose.Schema({
             type:mongoose.Schema.Types.ObjectId,
             ref:"Skill"
         }
-    ]
-    ,
-    projects:[
-        {
-            type:mongoose.Schema.Types.ObjectId,
-            ref:'Project'
-        }
-    ]
+    ],
+    regNo:{
+        type:"String",
+        trim:"true",
+        default:null
+    }
+    
+    
 })
 const User=mongoose.model('User',userSchema);
 module.exports=User;
