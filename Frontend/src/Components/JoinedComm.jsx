@@ -17,16 +17,6 @@ function JoinedComm({ user }) {
   return (
     <div>
       <div className="home-div">
-        <div id="search">
-          <i className="bx bx-search-alt" id="home-search"></i>
-          <input
-            className="search-box"
-            type="search"
-            placeholder="Search Community"
-          />
-        </div>
-        
-
         <div id="community-head">Joined Communities</div>
 
         <div className="communities">

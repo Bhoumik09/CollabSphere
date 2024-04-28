@@ -41,7 +41,13 @@ router.post('/project/:id/accept', async (req, res) => {
     if (!project.contributors.includes(userId)) {
       project.contributors.push(userId);
     }
-    await User.findByIdAndUpdate(userId, { coins: coins += 5 });
+
+    // Find the user and update the coins
+    const user = await User.findById(userId);
+    if (user) {
+      user.coins += 5;
+      await user.save();
+    }
 
     await project.save();
 

@@ -1,9 +1,9 @@
 .upload-button {
   display: block;
-  margin: 10px auto; /* Center the button horizontally */
-  padding: 10px 20px;
+  margin: 5px auto; /* Center the button horizontally */
+  padding: 5px 5px;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: #333; /* Adjust background color */
   color: white;
   cursor: pointer;
@@ -24,13 +24,16 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  max-width: 350px;
+  height: 95vh;
+  max-width: 900px;
   padding: 20px;
   border-radius: 20px;
   position: relative;
   background-color: #1a1a1a;
   color: #fff;
   border: 1px solid #333;
+  font-size: 1rem;
+  
 }
 
 .form label:not(.flex label) {
@@ -47,6 +50,7 @@
 .title {
   font-size: 28px;
   font-weight: 600;
+  top: 8px;
   letter-spacing: -1px;
   position: relative;
   display: flex;

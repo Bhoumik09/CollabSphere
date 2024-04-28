@@ -12,6 +12,15 @@ import rect1 from '../assets/images/Rectangle-1.svg'
 import rect2 from '../assets/images/Rectangle-2.svg'
 import polyTriangle2 from '../assets/images/Polygon_2_triangle.svg'
 import darklogo from '../assets/images/collabsphere-logo-dark-1.svg'
+import meta from '../assets/images/meta.svg'
+import x from '../assets/images/x.svg'
+import youtube from '../assets/images/youtube.svg'
+import instagram from '../assets/images/instagram.svg'
+import linkedin from '../assets/images/linkedin.svg'
+
+
+
+
 import { useNavigate } from 'react-router-dom'
 
 function Features() {
@@ -34,7 +43,7 @@ function Features() {
     };
     
   return (
-    <Fragment>
+    <div style={{backgroundColor:"#0D1117"}}>
         <div className="container">
         <div className="image-container">
             <img src={heroBlack} alt="hero-image" className="hero-image"/>
@@ -147,18 +156,18 @@ function Features() {
             </div>
 
             <div className="social-icons">
-                <img src="images/instagram-logo.svg" alt="instagram" />
-                <img src="images/meta-logo.svg" alt="meta" />
-                <img src="images/youtube-logo.svg" alt="youtube" />
-                <img src="images/linkdin-logo.svg" alt="linkedin" />
-                <img src="images/x-logo.svg" alt="twitter" />
+                <img src={instagram} alt="instagram" />
+                <img src={meta} alt="meta" />
+                <img src={youtube} alt="youtube" />
+                <img src={linkedin} alt="linkedin" />
+                <img src={x} alt="twitter" />
             </div>
         </div>
     </div>
 
     <hr className="footer-hr"/>
     <p className="trademark">© 2024 CollabSphere. All rights reserved.</p>
-</Fragment>
+</div>
   )
 }
 

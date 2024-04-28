@@ -275,7 +275,7 @@ body{
     top: 0%; 
     transform: translateY(-50%); 
     order: 3;
-    margin-left: 706px;
+    margin-left: 708px;
 }
 
 .line-pink {
@@ -284,7 +284,7 @@ body{
     border-image-slice: 1;
     height: 90vh;
     margin-top: 10px;
-    margin-right: 200px;
+    margin-right: 215px;
     padding: 0px;
     order: 2;
 }
@@ -345,14 +345,14 @@ body{
     top: 0%; 
     transform: translateY(-50%); 
     order: 3;
-    margin-left: 705px;
+    margin-left: 708px;
 }
 
 .line-cyan {
     border-left: 2px solid #33B3AE;
     height: 90vh;
     margin-top: 10px;
-    margin-left: 249px;
+    margin-left: 250px;
     padding: 0px;
     order: 2;
 }

@@ -4,8 +4,8 @@ import { index } from "../assets/js/index.js";
 import { Navigate, useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 import ProjectsList from "./ProjectsList.jsx";
-
 function ProjectMain({ user }) {
+  index();
   let navigate = useNavigate();
   let changePage = (link) => {
     navigate(`/app/project${link}`);

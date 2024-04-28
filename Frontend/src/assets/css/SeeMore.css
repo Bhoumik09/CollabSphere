@@ -19,26 +19,32 @@
     position: relative;
     top: 30px;
     left: 5px;
-    height: 500px;
-    width: 1000px;
+    height: 90vh;
+    width: 81vw;
     border-radius: 10px;
     background-color: #20283F;
+    scroll-behavior: smooth;
+    overflow: hidden;
 }
 
-.request_box header{
+
+.request-button{
     position: relative;
-    top:8px;
-    left: 10px;
-    color: rgb(213, 212, 212);
-    font-size: 15px;
+    left: 20px;
+    top: 10px;
+    color: white;
 }
-
-.request_box a{
+/* .request_box{
     position: relative;
     top: -15px;
     left: 785px;
     text-decoration: none;
     color: rgb(213, 212, 212);
+} */
+.member-button{
+    position: absolute;
+    right: 20px;
+    color: white;
 }
 
 .request_list ul{
@@ -60,7 +66,7 @@
 .users{
     background-color: #1f589f;
     height: 10vh;
-    width: 75vw;
+    width: 79vw;
     display: flex;
     align-items: center;
     border: 2px solid #20283F;

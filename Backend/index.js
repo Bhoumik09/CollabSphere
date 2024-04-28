@@ -17,7 +17,7 @@ const bodyParser=require('body-parser');
 const User = require('./models/User');
 const createCommunities = require('./seed');
 mongoose.connect('mongodb://127.0.0.1:27017/discord');
-// createCommunities()
+// createCommunities(); 
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
 app.use(session({
     secret: 'your-secret-key',

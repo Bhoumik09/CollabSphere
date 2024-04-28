@@ -3,7 +3,6 @@ import Leader from "./Leader";
 import { Link, Outlet, Route, Routes, useLocation } from "react-router-dom";
 import Profile from "./Profile";
 import "../assets/css/Profile.css";
-import Tyr from "./Tyr";
 import "../assets/css/Home.css";
 import android from "../assets/images/android-dev-banner.jpg";
 import banner1 from "../assets/images/banner1.png";
@@ -15,7 +14,7 @@ import Lists from "./Lists";
 import Side from "./Side";
 function Home({user}) {
   return (
-    <div style={{ display: "flex", width: "100vw", height:"10vh" }}>
+    <div style={{ display: "flex", width: "100vw", height:"10vh"  }}>
       <Side user={user?.id}/>    
       <Outlet />
     </div>

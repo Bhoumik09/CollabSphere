@@ -1,6 +1,6 @@
 let express = require("express");
-const Community = require("../models/community");
 const Project = require("../models/Project");
+const Community = require("../models/Community");
 let router = express.Router();
 router.get("/community/all", async (req, res) => {
   try {
@@ -14,7 +14,7 @@ router.get("/community/all", async (req, res) => {
 router.get("/community/joined/:id/members",async(req,res)=>{
   try {
     let {id}=req.params;
-    const community = await Community.findById(id, {members:1 }).populate('members');
+    const community = await Community.findById(id, {members:1 ,name:1}).populate('members');
     res.status(200).json(community);
   } catch (error) {
     console.error("Error fetching communities:", error);

@@ -14,7 +14,7 @@ function Nav({user}) {
     
   return (
     
-      <div className="header">
+      <div className="header" style={{backgroundColor:"#0D1117"}}>
         <header className="header-content">
             <a href="#home" className="home">
                 <img src={collab_dark} alt="CollabSphere Logo" className = "logo-icon" />

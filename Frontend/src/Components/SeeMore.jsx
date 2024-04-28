@@ -25,16 +25,16 @@ function SeeMore() {
     if (id) {
       fetchData();
     }
-  }, [id, requestArr]);
+  }, [id, last]);
   return (
     <div>
       <div class="dashboard">
         <header>Projects / My projects</header>
 
         <div class="request_box">
-          <header>Join Requests</header>
+          <Link to={`/app/project/${id}`} className="request-button">Join Requests</Link>
           <p>
-            <Link to="team">
+            <Link to={`/app/project/${id}/team`} className="member-button" >
               <i class="bx bx-group"></i> View Team Members
             </Link>
           </p>

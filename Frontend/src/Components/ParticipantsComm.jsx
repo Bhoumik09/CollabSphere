@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import profileImg from "../assets/images/collabsphere-logo-dark.jpg";
-import "../assets/css/projectMain.css";
+// import "../assets/css/projectMain.css";
 
 function ParticipantsComm({ user }) {
   let { id } = useParams();
@@ -15,8 +15,8 @@ function ParticipantsComm({ user }) {
     let response = await axios.get(
       `http://localhost:8000/community/joined/${id}/members`
     );
-
-    setParticipantsList(response?.data?.members);
+    console.log(response);
+    setParticipantsList(response?.data);
   };
 
   useEffect(() => {
@@ -25,7 +25,7 @@ function ParticipantsComm({ user }) {
   return (
     <div>
       <div class="dashboard">
-        <header>Projects / My projects</header>
+        <header>{participantsList?.name}</header>
 
         <div class="request_box">
           <header>
@@ -37,7 +37,7 @@ function ParticipantsComm({ user }) {
           <div class="request_list">
             <ul>
               {participantsList
-                ?.filter(
+                ?.members?.filter(
                   (member) =>
                     JSON.stringify(member._id) !== JSON.stringify(user?.id)
                 )

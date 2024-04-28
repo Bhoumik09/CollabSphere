@@ -155,8 +155,9 @@ body{
 .no-projects {
     text-align: center;
     font-size: 1.2rem;
-    color: #333;
-    margin-top: 2rem;
+    color: white;
+    margin-top: 10rem;
+    margin-left: 25rem;
   }
 .tab_content{
     display: block;
@@ -283,9 +284,13 @@ body{
 .button--icon {
     width: 2.5rem;
     height: 2.5rem;
+    position: absolute;
     background-color: transparent;
     border-radius: 0.25rem;
     fill: white;
+    right: 10px;
+    top: 10px;
+    border: none;
 }
   
  
@@ -293,11 +298,11 @@ body{
 .button--primary {
     position: relative;
     top: 10px;
-    left: 370px;
+    left: 470px;
     background-color: #007dab;
     color: #FFF;
     padding: 0.75rem 1.25rem;
-    border-radius: 0.25rem;
+    border-radius: 0.55rem;
     font-weight: 500;
     font-size: 0.875rem;
 }

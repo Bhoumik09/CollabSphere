@@ -9,7 +9,7 @@ router.get('/leader',async(req,res)=>{
        console.log(arr)
        arr.sort((a, b) => {
           // Sort in descending order based on coins
-          return a.coins - b.coins;
+          return b.coins - a.coins;
       });
        res.send(arr)
 })                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
