@@ -44,7 +44,7 @@ function generateUniqueUsername(name, reg) {
     temp += n;
   }
   temp += "#";
-  temp += reg.length > 0 ? reg : generateRandomNumber();
+  temp += reg.toLowerCase().length > 0 ? reg : generateRandomNumber();
   console.log(temp);
   return temp;
 }
@@ -133,7 +133,7 @@ router.patch("/user/:id/edit", async (req, res) => {
 });
 
 router.get("/find/user", async (req, res) => {
-  const search = req.query.search;
+  const search = req.query.search.toLowerCase();
   try {
     // Use the $regex operator to perform a case-insensitive search
     const regex = new RegExp(search, 'i');
