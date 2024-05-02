@@ -21,3 +21,20 @@ To ease that process, users at college level can use our system to find and requ
 4)Communities: To ease users find people having interest or experience in a field in a community, we have created different communities like Machine leaning, Blockchain, etc.
 
 5)Links of profile could be provided: CollabSphere facilitates the user to share the link of the profile, like GitHub or LinkedIn. 
+
+Landing page
+![image](https://github.com/Bhoumik09/CollabSphere/assets/141168358/866d201c-41f6-48da-9ef9-bfa8cf7495df)
+Home page
+![image](https://github.com/Bhoumik09/CollabSphere/assets/141168358/273f73ee-09fa-4821-9c0c-a60a47f82abf)
+Profile page
+![image](https://github.com/Bhoumik09/CollabSphere/assets/141168358/7fb13001-d125-442c-9582-ad3eef1e1014)
+Joined communities section
+![image](https://github.com/Bhoumik09/CollabSphere/assets/141168358/95599c48-dcb9-441f-b2d5-0efdf27b1cf1)
+![image](https://github.com/Bhoumik09/CollabSphere/assets/141168358/d024790d-2534-450d-a44a-96739bd63f04)
+![image](https://github.com/Bhoumik09/CollabSphere/assets/141168358/0dd32620-6597-4950-8d6a-4da26b0ba00b)
+![image](https://github.com/Bhoumik09/CollabSphere/assets/141168358/f4cea694-ff44-44fc-9a6c-718e48b46221)
+
+
+
+
+
