@@ -34,24 +34,25 @@ function Side({user}) {
             </li>
 
             <ul className="menu-links">
+            <Link to="/app/home" className="text nav-text" style={{color:"white"}}>
               <li className="navlink">
                 <div className="btns">
-                  <Link to="/app/home" className="text nav-text">
                     <i className="bx bx-home-alt"></i>
                     <span>Home</span>
-                  </Link>
+                 
                 </div>
               </li>
+              </Link>
               {user?
+              (
               <li className="navlink">
                 <div className="btns">
                   <Link to={`/app/profile/${user}`} className="text nav-text">
                     <i className="bx bx-user"></i>
                     <span>Profile</span>
-                    
                   </Link>
                 </div>
-              </li>:null}
+              </li>):null}
               <li className="navlin">
                 <div className="btns">
                   <Link to="/app/communities/joined" className="text nav-text">
@@ -60,23 +61,26 @@ function Side({user}) {
                   </Link>
                 </div>
               </li>
+              <Link to="/app/leader" className="text nav-text" style={{color:"white"}}>
               <li className="navlink">
                 <div className="btns">
-                  <Link to="/app/leader" className="text nav-text">
                     <i className="bx bxs-graduation"></i>
                     <span className="text nav-text" >Leaderboard</span>
-                  </Link>
+                  
                 </div>
               </li>
+              </Link>
+              <Link to="/app/project" style={{color:"white"}}>
               <li className="navlink">
                 <div className="btns">
-                  <Link to="/app/project">
+                  
                     <i className="bx bx-book"></i>
                     <span className="text nav-text">Projects</span>
-                  </Link>
+                  
                 </div>
               </li>
-              {user?<li className="navlink">
+              </Link>
+              {user?<li className="navlink" >
                 <div className="btns">
                   <Link to="/app/project">
                     <i className="bx bx-book"></i>

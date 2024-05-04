@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import profileImg from '../assets/images/collabsphere-logo-dark.jpg';
 
 function Members({ userId, PId }) {
@@ -75,13 +75,15 @@ function Members({ userId, PId }) {
           </button>
         </div>
         {last === "team" ? (
+          <Link to={userInfo?.github} target="_blank" rel="noopener noreferrer">
           <div className="github-btn">
             <button>
               <i className="bx bxl-github">
-                <a href={userInfo?.github} target="_blank" rel="noopener noreferrer"></a>
+                
               </i>
             </button>
           </div>
+          </Link>
         ) : (
           <div className="accept">
             <button onClick={accept}>
@@ -90,13 +92,15 @@ function Members({ userId, PId }) {
           </div>
         )}
         {last === "team" ? (
+          <Link to={userInfo?.linkedin} target="_blank" rel="noopener noreferrer">
           <div className="linkedin-btn">
             <button>
               <i className="bx bxl-linkedin">
-                <a href={userInfo?.linkedin} target="_blank" rel="noopener noreferrer"></a>
+                
               </i>
             </button>
           </div>
+          </Link>
         ) : (
           <div className="reject">
             <button onClick={reject}>

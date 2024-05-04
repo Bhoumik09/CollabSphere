@@ -55,28 +55,32 @@ function ParticipantsComm({ user }) {
                         View Profile
                       </button>
                     </div>
+                    <Link
+                            to={member?.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
                     <div className="github-btn">
                       <button>
                         <i className="bx bxl-github">
-                          <a
-                            href={member?.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          ></a>
+                          
                         </i>
                       </button>
                     </div>
+                    </Link>
+                    <Link 
+                            to={member?.linkedin}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
                     <div className="linkedin-btn">
                       <button>
                         <i className="bx bxl-linkedin">
-                          <a
-                            href={member?.linkedin}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          ></a>
+                          
                         </i>
                       </button>
                     </div>
+                    </Link>
                   </li>
                 ))}
             </ul>

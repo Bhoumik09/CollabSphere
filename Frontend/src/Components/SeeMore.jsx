@@ -25,7 +25,7 @@ function SeeMore() {
     if (id) {
       fetchData();
     }
-  }, [id]);
+  }, [id,last]);
   return (
     <div>
       <div class="dashboard">
