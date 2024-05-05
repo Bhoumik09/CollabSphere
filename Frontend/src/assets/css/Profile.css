@@ -3,83 +3,7 @@
 @import url('https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css');
 
 
-*{
-    text-decoration: none;
-}
-.sidebar{
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 250px;
-    /* padding: 10px 14px; */
-    background: #20283F;
-    border: none;
-    border-radius: 5px;
-}
 
-.appname{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 40px;
-    border-bottom: 2px solid #257EEB;
-    border-bottom-right-radius: 12px;
-    border-bottom-left-radius: 12px;
-}
-
-.header-text{
-    font-family: 'Poppins' sans-serif;
-    color: white;
-}
-
-.sidebar li{
-    padding: 10px 18px;
-    height: 50px;
-    /* background: red; */
-    margin-top: 10px;
-    list-style: none;
-    display: flex;
-    align-items: center;
-}
-
-.search-box{
-    padding-left: 10px;
-    height: 33px;
-    border: none;
-    width: 200px;
-    background-color: #1f589f;
-    border-radius: 12px;
-}
-
-::placeholder{
-    color: white;
-}
-
-.bx-search-alt{
-    color: white;
-    position: absolute;
-    left: 190px;
-    top: 67px
-}
-
-.sidebar li a{
-    text-decoration: none;
-    color: white;
-}
-
-.btns{
-    margin-top: 8px;
-    font-size: 13px;
-    border: none;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    padding: 20px;
-    width: 250px;
-    height: 40px;
-    /* background-color: #257EEB; */
-}
 
 .btns:hover{
     background-color: #257EEB;
@@ -89,7 +13,8 @@
     position: relative;
     left: 268px;
     height: 100vh;
-    width: 995px;
+    width: 80vw;
+    padding-right: 10px;
     /* background-color: red; */
 }
 
@@ -101,7 +26,8 @@
 
 .design-box{
     height: 150px;
-    width: 80vw;
+    max-width: 1200px;
+    margin-right: 40px;
     background-color: #257EEB;
     border: none;
     border-radius: 15px;
@@ -110,27 +36,30 @@
 
 .profile-content{
     height: 80vh;
-    width: 77vw;
     margin-top: -110px;
-    margin-left: 20px;
+    margin-left: 40px;
     background-color: #20283F;
     border: none;
     border-radius: 20px;
     box-shadow:  2px 2px 17px black ;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 20% 80%;
 }
 
 .name-img{
-    position: relative;
-    top: 25px;
-    left: 25px;
     display: flex;
-    align-items: center;
+    margin-top: 10px;
+    margin-left: 20px;
+    grid-area:1/1/1/2 ;
+    width: inherit;
+    
 }
 .name-img img{
     height: 70px;
     width: 70px;
     border: none;
-    border-radius: 7px;
+    border-radius: 20px;
     
 }
 
@@ -150,40 +79,52 @@
 
 }
 
-.profile-information{
-    position: relative;
-    top: 60px;
-    left: 50px;
-    width: 400px;
+.profile-information {
+    grid-area: 2/1/2/1;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-width: 400px; /* Add this line */
+    padding: 10px;
+    margin-left: -20px;
 }
 
 .info{
     display: flex;
     /* gap: 20px; */
+    width: 300px;
+    flex-wrap: wrap;
     margin-top: 10px;
     color: white;
     font-family: 'Poppins', sans-serif;
+}
+
+.project-head{
+    grid-area: 2/2;
+    color: white;
+    font-size: 1.2rem;
 }
 
 .user-info{
     position: relative;
     color: rgb(183, 183, 183);
     left: 20px;
+    font-size: 1rem;
+}
+@media screen  and (max-width:1024px){
+    .user-info{
+        font-size: .87rem;
+    }
+    .info{
+        font-size: .9rem;
+    }
 }
 
-.hr1{
-    position: relative;
-    width: 310px;
-    top: -80px;
-    left: 40px;
-}
 
-.skills{
-    position: relative;
-    top:-70px
-}
 
-.skills>header{
+
+
+.profile-information>header{
     position: relative;
     width: 400px;
     color: white;
@@ -212,9 +153,12 @@ i{
     width: 0;
 }
 .projects-display{
-    position: absolute;
-    right: 0px;
-    top:200px;
+    margin-top: 30px;
+    grid-area: 2/2;
+    overflow-y: scroll;
+    scrollbar-width: none; /* Hide scrollbar on Firefox */
+    -ms-overflow-style: none;
+    
 }
 .projects-display header{
     
@@ -223,7 +167,7 @@ i{
 }
 .project-card{
     margin: 20px;
-    width: 400px;
+    max-width: 400px;
     height: 90px;
     border: none;
     border-radius: 10px;
@@ -244,11 +188,11 @@ i{
     color: rgb(218, 193, 148);
 }
 .box-list{
-    width: 1000px;
+    word-wrap: normal;
     display: flex;
     flex-direction: column;
     color:black;
-    margin: auto;
+    margin: 20px;
     font-weight: bolder;
     font-size: 1.2rem;
     
@@ -257,7 +201,8 @@ i{
 .box{
     border: 2px solid white;
     display: grid;
-    grid-template-columns: 1fr 2fr .1fr;
+    grid-template-columns: .1fr 2fr .2fr;
+    text-align: left;
     margin: 10px;
     padding: 10px 10px;
     border-radius: 15px;
@@ -266,4 +211,14 @@ i{
     box-shadow: 5px 5px 8px red;
 
 }
+.id{
+    margin-right: 10px;
 
+}
+.id-name{
+    display: flex;
+    justify-content: center;
+}
+.id-coins{
+    margin-left: 10px;
+}

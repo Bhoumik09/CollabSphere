@@ -381,9 +381,16 @@ body{
     
     
 }
+.linkedin-btn{
+    display: flex;
+    justify-content: left;
+}
+.github-btn{
+    display: flex;
+    justify-content: center;
+}
 .github-btn button{
-    position: relative;
-    left: 575px;
+    margin:0px 10px;
     background-color: black;
     border-radius: 30px;
     height: 40px;
@@ -398,8 +405,7 @@ body{
 }
 
 .linkedin-btn button{
-    position: relative;
-    left: 600px;
+    
     background-color: #257EEB;
     border-radius: 30px;
     height: 40px;

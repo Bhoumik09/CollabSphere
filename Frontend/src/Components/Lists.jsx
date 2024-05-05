@@ -25,6 +25,7 @@ function Lists({ user }) {
       const response = await axios.get("http://localhost:8000/find/user", {
         params: { search },
       });
+      console.log(response.data);
       setSearchResults(response.data);
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -35,6 +36,7 @@ function Lists({ user }) {
     const getCommunity = async () => {
       try {
         const response = await axios.get("http://localhost:8000/community/all");
+        
         setCommunity(response.data);
       } catch (error) {
         console.error("Error fetching communities:", error);
@@ -45,6 +47,7 @@ function Lists({ user }) {
 
   return (
     <div>
+      
       <div className="home-div">
         <center><form className="searchBox" onSubmit={getSearch}>
           <input
@@ -80,6 +83,7 @@ function Lists({ user }) {
         </form></center>
         {searchResults ? (
           searchResults.map((member) => (
+            
             <div className="search-results">
               <div className="request_list">
                 <ul>
@@ -88,7 +92,7 @@ function Lists({ user }) {
                       <img alt="user-pfp" src={profileImg} />
                     </div>
                     <div className="info">
-                      <p>Name:{member?.name} </p>
+                      <p>{member?.name} </p>
                       {/* Add any additional user information you want to display */}
                     </div>
                     <div className="profile-btn">

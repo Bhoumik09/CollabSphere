@@ -62,22 +62,19 @@ function Profile({ user }) {
         </div>
 
         <div className="profile-information">
-          <div className="info"><p>Name: </p> <p className="user-info">{userInfo?.data?.user?.name}</p></div>
-          <div className="info"><p>Email : </p> <p className="user-info">{userInfo?.data?.user?.email} </p></div>
-          <div className="info"><p>Github :</p> <p className="user-info"> <a href={userInfo?.data?.user?.github} style={{ textDecoration: 'none', color: 'white' }} target='_blank' rel="noreferrer">See Github</a></p></div>
-          <div className="info"><p>Linkedin: </p> <p className="user-info"> <a href={userInfo?.data?.user?.linkedin} style={{ textDecoration: 'none', color: 'white' }} target='_blank' rel="noreferrer">See Linkedin</a></p></div>
-        </div>
-
-        <hr className="hr1" />
-
-        <div className="skills">
+          <div className="info"><p> </p> {userInfo?.data?.user?.name}</div>
+          <div className="info"><p> </p> {userInfo?.data?.user?.email} </div>
+          <div className="info"><p></p>  <a href={userInfo?.data?.user?.github} style={{ textDecoration: 'none', color: 'white' }} target='_blank' rel="noreferrer">See Github</a></div>
+          <div className="info"><p></p>  <a href={userInfo?.data?.user?.linkedin} style={{ textDecoration: 'none', color: 'white' }} target='_blank' rel="noreferrer">See Linkedin</a></div>
+          <br /><br />
           <header>Skills</header>
           {skill && skill.map((index) => (
             <p className="skill-item" key={index}> <i className='bx bx-chevron-right'></i>{index} </p>
           ))}
         </div>
+        <header className='project-head'>Top Projects</header>
         <div className="projects-display">
-        <header >Top Projects</header>
+        
         {projects.map(project => (
           <ProjectCard
             key={project._id}
@@ -86,7 +83,8 @@ function Profile({ user }) {
             link={project.github}
           />
         ))}
-      </div>
+        </div>
+
         
 
         

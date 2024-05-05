@@ -47,7 +47,7 @@ function ParticipantsComm({ user }) {
                       <img alt="user-pfp" src={profileImg} />
                     </div>
                     <div className="info">
-                      <p>Name:{member?.name} </p>
+                      <p>{member?.name} </p>
                       {/* Add any additional user information you want to display */}
                     </div>
                     <div className="profile-btn">

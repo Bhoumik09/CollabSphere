@@ -10,7 +10,7 @@ import machine from "../assets/images/machine-learning-banner2.jpg";
 import uibanner from "../assets/images/ui-banner2.jpg";
 import web from "../assets/images/website-development-banner.avif";
 
-import Lists from "./Lists";
+
 import Side from "./Side";
 function Home({user}) {
   return (

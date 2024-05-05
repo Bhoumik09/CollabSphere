@@ -66,7 +66,7 @@ function Members({ userId, PId }) {
           <img src={profileImg} alt="user-pfp" />
         </div>
         <div className="info">
-          <p>Name: {userInfo?.name}</p>
+          <p> {userInfo?.name}</p>
           {/* Add any additional user information you want to display */}
         </div>
         <div className="profile-btn">

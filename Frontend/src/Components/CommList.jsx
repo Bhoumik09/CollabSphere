@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 
 
 function CommList({id,name,desc,user,contains}) {
+    console.log("hehehe");
     let userId=user?.id;
     let location=useLocation();
     let navigate=useNavigate();

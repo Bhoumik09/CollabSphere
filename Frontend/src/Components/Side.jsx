@@ -2,7 +2,7 @@ import React from 'react'
 import "../assets/css/Home.css";
 import { Link } from 'react-router-dom';
 import { logout } from './Nav';
-
+import '../assets/js/home'
 function Side({user}) {
   return (
     <div>
@@ -16,7 +16,7 @@ function Side({user}) {
       `}</style>
         <header>
           <div className="appname">
-            <span className="header-text">CollabSphere</span>
+            <span className="header-text" >CollabSphere</span>
           </div>
         </header>
 

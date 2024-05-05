@@ -4,9 +4,9 @@ function LeaderComp({data,index,user}) {
   return (
     <div>
       <Link to={`/app/profile/${data.id}`} className="box" id={data.id} o>
-        <div>{index}</div>
-        <div>{data.name}</div>
-        <div>{data.coins}</div>
+        <div className="id">{index}</div>
+        <div className="id-name">{data.name}</div>
+        <div className="id-coins"> {data.coins}</div>
       </Link>
     </div>
   );
