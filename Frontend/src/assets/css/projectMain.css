@@ -115,8 +115,9 @@ body{
     top: 12%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 38%;
+    justify-content: space-between;
+    padding: 0px 200px;
+    
 }
 
 .partition{
@@ -135,20 +136,21 @@ body{
 }
 
 .hr-1{
-    position: relative;
-    width: 799px;
+    display: block;
+    margin:150px auto;
+    width: 60vw;
     height: 3px;
-    left: 12%;
+    position: relative;
+    top: 60px;
     border: 1px solid black;
-    top:100%;
+    
 }
 
 .line{
-    position: absolute;
-    top: 100%;
-    left: 12%;
+    position: relative;
+    bottom:  93px;
     height: 3px;
-    width: 334px;
+    width: 20vw;
     background-color: #257EEB;
     transition: all 0.3s ease-in-out;
 }

@@ -20,12 +20,14 @@ import linkedin from "../assets/images/linkedin.svg";
 
 import { useNavigate } from "react-router-dom";
 
-function Features() {
+function Features({user}) {
+  
   const nameRef = useRef(null);
   const emailRef = useRef(null);
   const messageRef = useRef(null);
   let navigate = useNavigate();
   function join() {
+    if(user!==null)
     navigate("/app/home");
   }
   const feedback = async (event) => {
@@ -53,9 +55,10 @@ function Features() {
           <p className="hero-desc">
             Join our vibrant community and unlock endless possibilities...
           </p>
-          <button className="hero-button" onClick={join}>
+          <button className="hero-button" onClick={join} >
             Join Community <i className="arrow right"></i>
           </button>
+          
         </div>
         <div className="image-container">
           <img src={heroBlack} alt="hero-image" className="hero-image" />

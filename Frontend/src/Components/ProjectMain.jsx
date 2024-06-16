@@ -43,7 +43,7 @@ function ProjectMain({ user }) {
       <section className="projects-section">
         <header className="page-title">Projects</header>
         <div className="tabs">
-          <div className="tab_btn">
+          <div className="tab_btn ">
             <button
               className="tab_btns active"
               onClick={() => {

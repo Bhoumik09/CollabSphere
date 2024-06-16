@@ -6,7 +6,7 @@ const router = express.Router();
 const multer = require("multer");
 const { v4: uuidv4 } = require("uuid");
 const { json } = require("body-parser");
-const uniqueUsernames = new Set();
+
 let givenHash = [];
 
 let findRank = async (id) => {
@@ -109,28 +109,6 @@ router.get("/user/:id/edit", async (req, res) => {
   }
 });
 
-router.patch("/user/:id/edit", async (req, res) => {
-  try {
-    let { id } = req.params;
-    let user = await User.findById(id);
-    while (user.skills.length) {
-      await Skill.findByIdAndDelete(user.skills);
-      user.skills.pop();
-    }
-    let { name, email, github, linkedin, skills } = req.body;
-    let skillNames = JSON.parse(skills);
-    let skillArr = await Promise.all(
-      skillNames.map(async (index) => {
-        let s = new Skill({ name: index });
-        return await s.save();
-      })
-    );
-    await User.findByIdAndUpdate(id, { skills: skillArr, linkedin, github });
-  } catch (error) {
-    console.error("Error updating user:", error);
-    res.status(500).json({ error: "Internal server error" });
-  }
-});
 
 router.get("/find/user", async (req, res) => {
   const search = req.query.search.toLowerCase();

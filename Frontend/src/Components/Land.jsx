@@ -7,7 +7,7 @@ function Land({user}) {
   return (
     <div>
       <Nav user={user}/>
-      <Features />
+      <Features user={user}/>
     </div>
   );
 }

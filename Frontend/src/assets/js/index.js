@@ -22,8 +22,10 @@ export function index(){
         // Move the line to the clicked tab
         const line = projectsSection.querySelector('.line');
         const tabWidth = tab.offsetWidth;
+        
         const tabLeft = tab.offsetLeft;
         const lineWidth = line.offsetWidth;
+        console.log(tabLeft);
         const lineLeft = tabLeft + (tabWidth - lineWidth) / 2;
         line.style.left = lineLeft + "px";
   
