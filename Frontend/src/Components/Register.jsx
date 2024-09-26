@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react'
 import '../assets/css/Register.css'
 import axios from 'axios'
+import random from 'random'
 import { Navigate, useNavigate } from 'react-router-dom';
 function Register({user,setUser}) {
   
@@ -10,6 +11,7 @@ function Register({user,setUser}) {
   const picRef=useRef();
   const gitRef=useRef();
   const linkRef=useRef();
+  const RegRef=useRef();
   const [skills,setSkills]=useState([]);
   function handleChange(e){
     let skill=e.target.value;
@@ -27,12 +29,15 @@ function Register({user,setUser}) {
     const linkedin = linkRef.current.value;
     const img = picRef.current.files[0];
     const formData = new FormData();
-    formData.append('name', name);
+    const reg=RegRef.current.value;
+    let nameArr=JSON.stringify(name.split(' '));
+    formData.append('name', nameArr);
     formData.append('email', email);
     formData.append('github', github);
     formData.append('linkedin', linkedin);
     formData.append('img', img);
     formData.append('skills', JSON.stringify(skills));
+    formData.append('reg', reg);
     try {
       const response = await axios.post('http://localhost:8000/new/profile', formData, {
         headers: {
@@ -50,23 +55,24 @@ function Register({user,setUser}) {
       console.error('Error submitting form:', error);
     }
   }
-  console.log("This is register");
-  console.log()
   return (
       <div >
         <div className="form-container">
           <form className="form" onSubmit={handleForm}>
-            <p className="title">Account Info</p>
-            <p className="message">Register now and get full access to our app.</p>
+            <p className="title">Complete your profile</p>
+            {/* <p className="message">Fill in your information and jump into our app.</p> */}
             <label htmlFor="upload-image" className="upload-button">Upload Image</label>
-            <input type="file" id="upload-image" style={{display: 'none'}} ref={picRef} />
-            <div className="flex">
+            <input type="file" id="upload-image" style={{display: 'none'}} ref={picRef} required />
+            
               <label>
                 <input className="input" type="text" ref={nameRef} required />
                 <span>Name</span>
               </label>
-              <br /> 
-            </div>
+              
+            <label>
+              <input className="input" type="registration" ref={RegRef}  placeholder='Only for VIT STUDENTS' />
+              <span>Registration Number(optional)</span>
+            </label>
             <label>
               <input className="input" type="email" ref={emailRef}  value={user.emails[0].value} disabled />
               <span>Email</span>
@@ -89,7 +95,7 @@ function Register({user,setUser}) {
                       <polyline points="1.5 6 4.5 9 10.5 1" />
                     </svg>
                   </span>
-                  <span>MERN Stack</span>
+                  <span>Web Development</span>
                 </label>
               </div>
               <div className="checkbox-wrapper">
@@ -104,25 +110,25 @@ function Register({user,setUser}) {
                 </label>
               </div>
               <div className="checkbox-wrapper">
-                <input type="checkbox" id="checkbox-3" className="inp-cbx" value="AI" onChange={handleChange} />
+                <input type="checkbox" id="checkbox-3" className="inp-cbx" value="ML" onChange={handleChange} />
                 <label htmlFor="checkbox-3" className="cbx">
                   <span>
                     <svg viewBox="0 0 12 10" height="10px" width="12px">
                       <polyline points="1.5 6 4.5 9 10.5 1" />
                     </svg>
                   </span>
-                  <span>AI</span>
+                  <span>Machine Learning</span>
                 </label>
               </div>
               <div className="checkbox-wrapper">
-                <input type="checkbox" id="checkbox-4" className="inp-cbx" value="ML" onChange={handleChange} />
+                <input type="checkbox" id="checkbox-4" className="inp-cbx" value="CyberSecurity" onChange={handleChange} />
                 <label htmlFor="checkbox-4" className="cbx">
                   <span>
                     <svg viewBox="0 0 12 10" height="10px" width="12px">
                       <polyline points="1.5 6 4.5 9 10.5 1" />
                     </svg>
                   </span>
-                  <span>ML</span>
+                  <span>Cybersecurity</span>
                 </label>
               </div>
               <div className="checkbox-wrapper">
@@ -133,7 +139,7 @@ function Register({user,setUser}) {
                       <polyline points="1.5 6 4.5 9 10.5 1" />
                     </svg>
                   </span>
-                  <span>Android Dev</span>
+                  <span>Android Development</span>
                 </label>
               </div>
               <div className="checkbox-wrapper">
@@ -145,6 +151,105 @@ function Register({user,setUser}) {
                     </svg>
                   </span>
                   <span>Editing</span>
+                </label>
+              </div>
+              <div className="checkbox-wrapper">
+                <input type="checkbox" id="checkbox-7" className="inp-cbx"  value="BlockChain" onChange={handleChange}/>
+                <label htmlFor="checkbox-7" className="cbx">
+                  <span>
+                    <svg viewBox="0 0 12 10" height="10px" width="12px">
+                      <polyline points="1.5 6 4.5 9 10.5 1" />
+                    </svg>
+                  </span>
+                  <span>Blockchain</span>
+                </label>
+              </div>
+              <div className="checkbox-wrapper">
+                <input type="checkbox" id="checkbox-8" className="inp-cbx"  value="CloudComputing" onChange={handleChange}/>
+                <label htmlFor="checkbox-8" className="cbx">
+                  <span>
+                    <svg viewBox="0 0 12 10" height="10px" width="12px">
+                      <polyline points="1.5 6 4.5 9 10.5 1" />
+                    </svg>
+                  </span>
+                  <span>Cloud Computing</span>
+                </label>
+              </div>
+              <div className="checkbox-wrapper">
+                <input type="checkbox" id="checkbox-9" className="inp-cbx"  value="DataScience" onChange={handleChange}/>
+                <label htmlFor="checkbox-9" className="cbx">
+                  <span>
+                    <svg viewBox="0 0 12 10" height="10px" width="12px">
+                      <polyline points="1.5 6 4.5 9 10.5 1" />
+                    </svg>
+                  </span>
+                  <span>Data Science</span>
+                </label>
+              </div>
+              <div className="checkbox-wrapper">
+                <input type="checkbox" id="checkbox-10" className="inp-cbx"  value="DevOps" onChange={handleChange}/>
+                <label htmlFor="checkbox-10" className="cbx">
+                  <span>
+                    <svg viewBox="0 0 12 10" height="10px" width="12px">
+                      <polyline points="1.5 6 4.5 9 10.5 1" />
+                    </svg>
+                  </span>
+                  <span>DevOps</span>
+                </label>
+              </div>
+              <div className="checkbox-wrapper">
+                <input type="checkbox" id="checkbox-11" className="inp-cbx"  value="GameDev" onChange={handleChange}/>
+                <label htmlFor="checkbox-11" className="cbx">
+                  <span>
+                    <svg viewBox="0 0 12 10" height="10px" width="12px">
+                      <polyline points="1.5 6 4.5 9 10.5 1" />
+                    </svg>
+                  </span>
+                  <span>Game Development</span>
+                </label>
+              </div>
+              <div className="checkbox-wrapper">
+                <input type="checkbox" id="checkbox-12" className="inp-cbx"  value="IOT" onChange={handleChange}/>
+                <label htmlFor="checkbox-12" className="cbx">
+                  <span>
+                    <svg viewBox="0 0 12 10" height="10px" width="12px">
+                      <polyline points="1.5 6 4.5 9 10.5 1" />
+                    </svg>
+                  </span>
+                  <span>IoT</span>
+                </label>
+              </div>
+              <div className="checkbox-wrapper">
+                <input type="checkbox" id="checkbox-13" className="inp-cbx"  value="Robotics" onChange={handleChange}/>
+                <label htmlFor="checkbox-13" className="cbx">
+                  <span>
+                    <svg viewBox="0 0 12 10" height="10px" width="12px">
+                      <polyline points="1.5 6 4.5 9 10.5 1" />
+                    </svg>
+                  </span>
+                  <span>Robotics</span>
+                </label>
+              </div>
+              <div className="checkbox-wrapper">
+                <input type="checkbox" id="checkbox-14" className="inp-cbx"  value="FreeLancing" onChange={handleChange}/>
+                <label htmlFor="checkbox-14" className="cbx">
+                  <span>
+                    <svg viewBox="0 0 12 10" height="10px" width="12px">
+                      <polyline points="1.5 6 4.5 9 10.5 1" />
+                    </svg>
+                  </span>
+                  <span>Freelancing</span>
+                </label>
+              </div>
+              <div className="checkbox-wrapper">
+                <input type="checkbox" id="checkbox-15" className="inp-cbx"  value="OpenSource" onChange={handleChange}/>
+                <label htmlFor="checkbox-15" className="cbx">
+                  <span>
+                    <svg viewBox="0 0 12 10" height="10px" width="12px">
+                      <polyline points="1.5 6 4.5 9 10.5 1" />
+                    </svg>
+                  </span>
+                  <span>OpenSource</span>
                 </label>
               </div>
             </div>

@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css');
+
+
+
+
+.btns:hover{
+    background-color: #257EEB;
+}
+
+.profile-area{
+    position: relative;
+    left: 268px;
+    height: 100vh;
+    width: 80vw;
+    padding-right: 10px;
+    /* background-color: red; */
+}
+
+.profile-header{
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    padding: 8px 21px;
+}
+
+.design-box{
+    height: 150px;
+    max-width: 1200px;
+    margin-right: 40px;
+    background-color: #257EEB;
+    border: none;
+    border-radius: 15px;
+    box-shadow:  2px 2px 17px rgba(72, 135, 202, 0.8) ;
+}
+
+.profile-content{
+    height: 80vh;
+    margin-top: -110px;
+    margin-left: 40px;
+    background-color: #20283F;
+    border: none;
+    border-radius: 20px;
+    box-shadow:  2px 2px 17px black ;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 20% 80%;
+}
+
+.name-img{
+    display: flex;
+    margin-top: 10px;
+    margin-left: 20px;
+    grid-area:1/1/1/2 ;
+    width: inherit;
+    
+}
+.name-img img{
+    height: 70px;
+    width: 70px;
+    border: none;
+    border-radius: 20px;
+    
+}
+
+.name-img p{
+    font-family: 'Poppins' sans-serif;
+    margin-left: 11px;
+}
+
+.name{
+    color: white;
+    
+}
+
+.rank{
+    display: flex; 
+    color: rgb(183, 183, 183);
+
+}
+
+.profile-information {
+    grid-area: 2/1/2/1;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-width: 400px; /* Add this line */
+    padding: 10px;
+    margin-left: -20px;
+}
+
+.info{
+    display: flex;
+    /* gap: 20px; */
+    width: 300px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+.project-head{
+    grid-area: 2/2;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.user-info{
+    position: relative;
+    color: rgb(183, 183, 183);
+    left: 20px;
+    font-size: 1rem;
+}
+@media screen  and (max-width:1024px){
+    .user-info{
+        font-size: .87rem;
+    }
+    .info{
+        font-size: .9rem;
+    }
+}
+
+
+
+
+
+.profile-information>header{
+    position: relative;
+    width: 400px;
+    color: white;
+    font-size: 18px;
+    left: 48px;
+    /* background-color: red; */
+
+}
+i{
+    margin-right: 3px;
+}
+.skill-item{
+    position: relative;
+    width: 340px;
+    color: rgb(183, 183, 183);
+    top: 10px;
+    left: 50px;
+}
+
+.separator{
+    position: relative;
+    top: -333px;
+    left: 530px;
+    border: 1px solid white;
+    height: 320px;
+    width: 0;
+}
+.projects-display{
+    margin-top: 30px;
+    grid-area: 2/2;
+    overflow-y: scroll;
+    scrollbar-width: none; /* Hide scrollbar on Firefox */
+    -ms-overflow-style: none;
+    
+}
+.projects-display header{
+    
+    color: white;
+    
+}
+.project-card{
+    margin: 20px;
+    max-width: 400px;
+    height: 90px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 17px black ;
+    background:linear-gradient(100deg, #257EEB 0%, rgba(9,9,121,1) 88%, rgba(2,0,36,1) 100%);
+    padding: 10px;
+}
+
+.content{
+    
+    margin-left: 258px;
+    width: 80vw;
+}
+#heading{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgb(218, 193, 148);
+}
+.box-list{
+    word-wrap: normal;
+    display: flex;
+    flex-direction: column;
+    color:black;
+    margin: 20px;
+    font-weight: bolder;
+    font-size: 1.2rem;
+    
+    
+}
+.box{
+    border: 2px solid white;
+    display: grid;
+    grid-template-columns: .1fr 2fr .2fr;
+    text-align: left;
+    margin: 10px;
+    padding: 10px 10px;
+    border-radius: 15px;
+    background-color: aliceblue;
+    border: 3px soild rgb(167, 120, 120);
+    box-shadow: 5px 5px 8px red;
+
+}
+.id{
+    margin-right: 10px;
+
+}
+.id-name{
+    display: flex;
+    justify-content: center;
+}
+.id-coins{
+    margin-left: 10px;
+}
