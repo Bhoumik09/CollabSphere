@@ -48,8 +48,8 @@ function generateUniqueUsername(name, reg) {
   console.log(temp);
   return temp;
 }
-
-const upload = multer({ dest: "uploads/" });
+const storage = multer.memoryStorage();
+const upload = multer({ storage: storage });
 
 router.post("/new/profile", upload.single("img"), async (req, res) => {
   try {
