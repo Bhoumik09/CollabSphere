@@ -41,7 +41,7 @@ passport.use(
       {
         clientID: GOOGLE_CLIENT_ID,
       clientSecret: GOOGLE_CLIENT_SECRET,
-      callbackURL: `/auth/google/callback`,
+      callbackURL: `${backendUrl}/auth/google/callback`,
       scope: ["profile", "email"],
       },
       function (accessToken, refreshToken, profile, done) {
