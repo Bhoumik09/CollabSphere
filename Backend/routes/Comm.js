@@ -5,6 +5,7 @@ let router = express.Router();
 router.get("/community/all", async (req, res) => {
   try {
     const communities = await Community.find({}, { name: 1, description: 1,members:1 });
+    ///this is explicit exclusion
     res.status(200).json(communities);
   } catch (error) {
     console.error("Error fetching communities:", error);

@@ -65,7 +65,7 @@ function checkEmail(email){
   });
   
 app.use(
-    cors()
+    cors({origin:'http://localhost:5173',credentials:true})
   );
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
@@ -76,4 +76,7 @@ app.use(leaderRoutes);
 app.use(projectRoutes);
 app.use(communityRoutes);
 // createCommunities();
-app.listen(process.env.PORT);
+if(process.env.NODE_ENV!=="production"){
+  app.listen(process.env.PORT||8000);
+}
+module.exports=app;
