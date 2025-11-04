@@ -4,6 +4,7 @@ import { index } from "../assets/js/index.js";
 import { Navigate, useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 import ProjectsList from "./ProjectsList.jsx";
+import { url } from "../App.jsx";
 function ProjectMain({ user }) {
   index();
   let navigate = useNavigate();
@@ -25,11 +26,11 @@ function ProjectMain({ user }) {
       setTimeout(async () => {
         let response;
         if (present === "project") {
-          response = await axios.get("https://collab-sphere-beta.vercel.app/project", {
+          response = await axios.get(`${url}/project`, {
             params: { userId: id },
           });
         } else {
-          response = await axios.get("https://collab-sphere-beta.vercel.app/project/all");
+          response = await axios.get(`${url}/project/all`);
         }
         SetProject(response.data);
         setShowProjects(true);

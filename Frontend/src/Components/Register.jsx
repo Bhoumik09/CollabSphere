@@ -3,6 +3,7 @@ import '../assets/css/Register.css'
 import axios from 'axios'
 import random from 'random'
 import { Navigate, useNavigate } from 'react-router-dom';
+import { url } from '../App';
 function Register({user,setUser}) {
   
   let navigate=useNavigate();
@@ -39,7 +40,7 @@ function Register({user,setUser}) {
     formData.append('skills', JSON.stringify(skills));
     formData.append('reg', reg);
     try {
-      const response = await axios.post('https://collab-sphere-beta.vercel.app/new/profile', formData, {
+      const response = await axios.post(`${url}/new/profile`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }

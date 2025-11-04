@@ -2,11 +2,12 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import CommList from "./CommList";
 import '../assets/css/Home.css'
+import { url } from "../App";
 function JoinedComm({ user }) {
   let id = user?.id;
   let [joinedCommunity, setJoinedCommunity] = useState([]);
   let getJoinedComm = async () => {
-    let response = await axios.get("https://collab-sphere-beta.vercel.app/community/joined", {
+    let response = await axios.get(`${url}/community/joined`, {
       params: { id },
     });
     setJoinedCommunity(response.data);

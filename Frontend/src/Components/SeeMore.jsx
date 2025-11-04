@@ -3,6 +3,7 @@ import axios from "axios";
 import "../assets/css/SeeMore.css";
 import Members from "./Members";
 import { Link, useLocation, useParams } from "react-router-dom";
+import { url } from "../App";
 function SeeMore() {
   let { id } = useParams();
   let location = useLocation();
@@ -14,7 +15,7 @@ function SeeMore() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://collab-sphere-beta.vercel.app/project/${id}?last=${last}`
+          `${url}/project/${id}?last=${last}`
         );
         SetRequestArr(response.data.reqArr);
       } catch (error) {

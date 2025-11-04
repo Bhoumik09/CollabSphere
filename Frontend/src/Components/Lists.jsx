@@ -8,6 +8,7 @@ import axios from "axios";
 import CommList from "./CommList";
 import profileImg from "../assets/images/collabsphere-logo-dark.jpg";
 import { useNavigate } from "react-router-dom";
+import { url } from "../App";
 
 function Lists({ user }) {
   const [communitiesArr, setCommunity] = useState([]);
@@ -22,7 +23,7 @@ function Lists({ user }) {
     e.preventDefault();
     const search = searchRef.current.value;
     try {
-      const response = await axios.get("https://collab-sphere-beta.vercel.app/find/user", {
+      const response = await axios.get(`${url}/find/user`, {
         params: { search },
       });
       console.log(response.data);
@@ -35,7 +36,7 @@ function Lists({ user }) {
   useEffect(() => {
     const getCommunity = async () => {
       try {
-        const response = await axios.get("https://collab-sphere-beta.vercel.app/community/all");
+        const response = await axios.get(`${url}/community/all`);
         
         setCommunity(response.data);
       } catch (error) {

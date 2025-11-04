@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import LeaderComp from "./LeaderComp";
 import '../assets/css/Profile.css';
+import { url } from "../App";
 
 function Leader({ user }) {
   const [leader, setLeader] = useState([]);
@@ -10,7 +11,7 @@ function Leader({ user }) {
   useEffect(() => {
     async function getLeaderBoard() {
       try {
-        const response = await axios.get('https://collab-sphere-beta.vercel.app/leader');
+        const response = await axios.get(`${url}/leader`);
         setLeader(response.data); // Assuming the response.data is an array
       } catch (error) {
         console.error("Error fetching leaderboard:", error);

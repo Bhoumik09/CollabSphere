@@ -1,3 +1,4 @@
+import { url } from '../App';
 import collab_dark from '../assets/images/collabsphere-logo-dark-1.svg'
 import { useNavigate } from 'react-router-dom'
 function Nav({user}) {
@@ -7,7 +8,7 @@ function Nav({user}) {
 
     let googleAuth = (e) => {
         e.preventDefault();
-        window.open('https://collab-sphere-beta.vercel.app/auth/google',"_self");
+        window.open(`${url}/auth/google`,"_self");
         
     };
     
@@ -39,7 +40,7 @@ function Nav({user}) {
 }
 export function logout(e)  {
     e.preventDefault();
-    window.open('https://collab-sphere-beta.vercel.app/auth/logout','_self');
+    window.open(`${url}/auth/logout`,'_self');
 };
 
 export default Nav

@@ -13,12 +13,13 @@ import CreateProject from './Components/CreateProject'
 import SeeMore from './Components/SeeMore'
 import JoinedComm from './Components/JoinedComm'
 import ParticipantsComm from './Components/ParticipantsComm'
+export const url="https://collab-sphere-beta.vercel.app"
+
 function App() {
   const [user, setUser] = useState(null);
-
   useEffect(() => {
     const getUser = () => {
-      fetch("https://collab-sphere-beta.vercel.app/auth/login/success", {
+      fetch(`${url}/auth/login/success`, {
         method: "GET",
         credentials: "include",
         headers: {
@@ -44,7 +45,7 @@ function App() {
           });
         })
         .catch((err) => {
-
+          console.log(err)
           console.log(err.message);
         });
     };

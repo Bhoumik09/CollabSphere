@@ -4,6 +4,7 @@ import '../assets/css/Profile.css';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import ProjectCard from './ProjectCard';
+import { url } from '../App';
 
 function Profile({ user }) {
   
@@ -17,11 +18,11 @@ function Profile({ user }) {
   useEffect(() => {
     const getProfile = async () => {
       try {
-        const response = await axios.get(`https://collab-sphere-beta.vercel.app/user/${id}`);
+        const response = await axios.get(`${url}/user/${id}`);
         SetUserInfo(response);
 
         // Fetch projects for the user
-        const projectsResponse = await axios.get(`https://collab-sphere-beta.vercel.app/project?userId=${id}`);
+        const projectsResponse = await axios.get(`${url}/project?userId=${id}`);
         setProjects(projectsResponse.data);
       } catch (error) {
         console.error('Error fetching profile or projects:', error);

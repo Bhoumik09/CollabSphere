@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import profileImg from "../assets/images/collabsphere-logo-dark.jpg";
+import { url } from "../App";
 // import "../assets/css/projectMain.css";
 
 function ParticipantsComm({ user }) {
@@ -13,7 +14,7 @@ function ParticipantsComm({ user }) {
   };
   let getPartList = async () => {
     let response = await axios.get(
-      `https://collab-sphere-beta.vercel.app/community/joined/${id}/members`
+      `${url}/community/joined/${id}/members`
     );
     console.log(response);
     setParticipantsList(response?.data);

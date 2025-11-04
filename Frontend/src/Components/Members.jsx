@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import profileImg from '../assets/images/collabsphere-logo-dark.jpg';
+import { url } from "../App";
 
 function Members({ userId, PId }) {
   const [showMember, setShowMember] = useState(true);
@@ -12,7 +13,7 @@ function Members({ userId, PId }) {
 
   const accept = async () => {
     try {
-      await axios.post(`https://collab-sphere-beta.vercel.app/project/${PId}/accept`, { userId });
+      await axios.post(`${url}/project/${PId}/accept`, { userId });
       setShowMember(false);
     } catch (error) {
       console.error("Error accepting member:", error);
@@ -21,7 +22,7 @@ function Members({ userId, PId }) {
 
   const reject = async () => {
     try {
-      await axios.post(`https://collab-sphere-beta.vercel.app/project/${PId}/reject`, { userId });
+      await axios.post(`${url}/project/${PId}/reject`, { userId });
       setShowMember(false);
     } catch (error) {
       console.error("Error rejecting member:", error);
@@ -38,7 +39,7 @@ function Members({ userId, PId }) {
   useEffect(() => {
     const getUser = async () => {
       try {
-        const response = await axios.get(`https://collab-sphere-beta.vercel.app/user/${userId}`);
+        const response = await axios.get(`${url}/user/${userId}`);
         setUserInfo(response.data.user);
       } catch (error) {
         console.error("Error fetching user information:", error);
