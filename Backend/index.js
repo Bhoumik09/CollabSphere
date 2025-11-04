@@ -76,6 +76,9 @@ app.use(leaderRoutes);
 app.use(projectRoutes);
 app.use(communityRoutes);
 // createCommunities();
+app.get('/',(req,res)=>{
+    res.send("Welcome to CollabSphere Backend");
+});
 if(process.env.NODE_ENV!=="production"){
   app.listen(process.env.PORT||8000);
 }
