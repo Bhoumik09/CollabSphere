@@ -33,6 +33,7 @@ app.use(session({
     resave: false,
     saveUninitialized: false
 }));
+const backendUrl = process.env.BACKEND_URL || 'http://localhost:8000';
 const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID;
 const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET;
 passport.use(
@@ -40,11 +41,10 @@ passport.use(
       {
         clientID: GOOGLE_CLIENT_ID,
       clientSecret: GOOGLE_CLIENT_SECRET,
-      callbackURL: "/auth/google/callback",
+      callbackURL: `${backendUrl}/auth/google/callback`,
       scope: ["profile", "email"],
       },
       function (accessToken, refreshToken, profile, done) {
-        console.log(profile);
         done(null, profile);
       }
     )
