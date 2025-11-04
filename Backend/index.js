@@ -65,7 +65,7 @@ function checkEmail(email){
   });
   
 app.use(
-    cors({origin:'http://localhost:5173',credentials:true})
+    cors({origin:process.env.FRONTEND_URL,credentials:true})
   );
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
