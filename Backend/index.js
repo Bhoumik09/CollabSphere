@@ -41,7 +41,7 @@ passport.use(
       {
         clientID: GOOGLE_CLIENT_ID,
       clientSecret: GOOGLE_CLIENT_SECRET,
-      callbackURL: `${backendUrl}/auth/google/callback`,
+      callbackURL: `/auth/google/callback`,
       scope: ["profile", "email"],
       },
       function (accessToken, refreshToken, profile, done) {
@@ -65,7 +65,7 @@ function checkEmail(email){
   });
   
 app.use(
-    cors({origin:process.env.FRONTEND_URL,credentials:true})
+    cors({origin:process.env.FRONTEND_URL ||'http://localhost:5173',credentials:true})
   );
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
