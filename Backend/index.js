@@ -18,6 +18,7 @@ const bodyParser=require('body-parser');
 const User = require('./models/User');
 const createCommunities = require('./seed');
 const { MongoClient, ServerApiVersion } = require('mongodb');
+const MongoStore = require('connect-mongo');
 try{
   mongoose.connect(process.env.MONGODB);
  console.log('connected')
@@ -50,7 +51,17 @@ passport.use(
     )
   );
   app.use(passport.initialize());
-app.use(passport.session());
+app.use(session({
+    // 2. Use a real secret from your .env file
+     secret: process.env.SESSION_SECRET, 
+    resave: false,
+    saveUninitialized: false,
+    // 3. Tell session to use connect-mongo
+    store: MongoStore.create({
+        mongoUrl: process.env.MONGODB,
+        ttl: 14 * 24 * 60 * 60 // = 14 days. Sessions will auto-delete after 2 weeks
+    })
+}));
 function checkEmail(email){
 
 }
