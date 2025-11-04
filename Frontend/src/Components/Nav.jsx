@@ -1,24 +1,21 @@
-import React, { useEffect } from 'react'
+import { url } from '../App';
 import collab_dark from '../assets/images/collabsphere-logo-dark-1.svg'
 import { useNavigate } from 'react-router-dom'
 function Nav({user}) {
     let navigate=useNavigate();
     
-    let logout = (e) => {
-        e.preventDefault();
-        window.open('http://localhost:8000/auth/logout','_self');
-    };
+    
 
     let googleAuth = (e) => {
         e.preventDefault();
-        window.open('http://localhost:8000/auth/google',"_self");
+        window.open(`${url}/auth/google`,"_self");
         
     };
     
     
   return (
     
-      <div className="header">
+      <div className="header" style={{backgroundColor:"#0D1117"}}>
         <header className="header-content">
             <a href="#home" className="home">
                 <img src={collab_dark} alt="CollabSphere Logo" className = "logo-icon" />
@@ -41,5 +38,9 @@ function Nav({user}) {
     
   )
 }
+export function logout(e)  {
+    e.preventDefault();
+    window.open(`${url}/auth/logout`,'_self');
+};
 
 export default Nav
