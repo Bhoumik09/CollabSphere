@@ -1,6 +1,6 @@
 let express = require("express");
 const Project = require("../models/Project");
-const Community = require("../models/Community");
+const Community = require("../models/community");
 let router = express.Router();
 router.get("/community/all", async (req, res) => {
   try {
