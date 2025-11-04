@@ -1,4 +1,4 @@
-const Community = require("./models/Community");
+const Community = require("./models/community");
 
 
 const communities = [
