@@ -12,7 +12,7 @@ function Members({ userId, PId }) {
 
   const accept = async () => {
     try {
-      await axios.post(`http://localhost:8000/project/${PId}/accept`, { userId });
+      await axios.post(`https://collab-sphere-beta.vercel.app/project/${PId}/accept`, { userId });
       setShowMember(false);
     } catch (error) {
       console.error("Error accepting member:", error);
@@ -21,7 +21,7 @@ function Members({ userId, PId }) {
 
   const reject = async () => {
     try {
-      await axios.post(`http://localhost:8000/project/${PId}/reject`, { userId });
+      await axios.post(`https://collab-sphere-beta.vercel.app/project/${PId}/reject`, { userId });
       setShowMember(false);
     } catch (error) {
       console.error("Error rejecting member:", error);
@@ -38,7 +38,7 @@ function Members({ userId, PId }) {
   useEffect(() => {
     const getUser = async () => {
       try {
-        const response = await axios.get(`http://localhost:8000/user/${userId}`);
+        const response = await axios.get(`https://collab-sphere-beta.vercel.app/user/${userId}`);
         setUserInfo(response.data.user);
       } catch (error) {
         console.error("Error fetching user information:", error);

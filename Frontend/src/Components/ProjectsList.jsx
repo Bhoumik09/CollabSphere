@@ -20,7 +20,7 @@ function ProjectsList({ desc, id, name, git, user, author }) {
   useEffect(() => {
     const checkPendingStatus = async () => {
       try {
-        const response = await axios.get(`http://localhost:8000/project/request/${id}`, {
+        const response = await axios.get(`https://collab-sphere-beta.vercel.app/project/request/${id}`, {
           params: { userId },
         });
         setIsPending(response.data.isPending);
@@ -36,7 +36,7 @@ function ProjectsList({ desc, id, name, git, user, author }) {
   let contribute = async () => {
     setIsContributionPending(true);
     try {
-      await axios.post(`http://localhost:8000/project/request/${id}`, { userId });
+      await axios.post(`https://collab-sphere-beta.vercel.app/project/request/${id}`, { userId });
     } catch (error) {
       console.error("Error submitting contribution request:", error);
       setIsContributionPending(false);

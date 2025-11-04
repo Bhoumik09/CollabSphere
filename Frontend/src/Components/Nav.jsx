@@ -7,7 +7,7 @@ function Nav({user}) {
 
     let googleAuth = (e) => {
         e.preventDefault();
-        window.open('http://localhost:8000/auth/google',"_self");
+        window.open('https://collab-sphere-beta.vercel.app/auth/google',"_self");
         
     };
     
@@ -39,7 +39,7 @@ function Nav({user}) {
 }
 export function logout(e)  {
     e.preventDefault();
-    window.open('http://localhost:8000/auth/logout','_self');
+    window.open('https://collab-sphere-beta.vercel.app/auth/logout','_self');
 };
 
 export default Nav

@@ -19,7 +19,7 @@ function CreateProject({user}) {
         ProjectGit.current.value="";
         ProjectField.current.value="";
         let id=user?.id;
-        axios.post('http://localhost:8000/project/new',{title,desc,git,id,field});
+        axios.post('https://collab-sphere-beta.vercel.app/project/new',{title,desc,git,id,field});
         navigate('/app/project');
         
     }

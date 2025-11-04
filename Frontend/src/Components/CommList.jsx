@@ -4,7 +4,6 @@ import { useLocation, useNavigate } from 'react-router-dom';
 
 
 function CommList({id,name,desc,user,contains}) {
-    console.log("hehehe");
     let userId=user?.id;
     let location=useLocation();
     let navigate=useNavigate();
@@ -16,12 +15,12 @@ function CommList({id,name,desc,user,contains}) {
     }
     let join=async()=>{
         setCommPresent(true);
-        await axios.post(`http://localhost:8000/community/join/${id}`,{userId});
+        await axios.post(`https://collab-sphere-beta.vercel.app/community/join/${id}`,{userId});
         
     }
     let leave=async()=>{
       setCommPresent(false);
-      await axios.post(`http://localhost:8000/community/leave/${id}`,{userId});
+      await axios.post(`https://collab-sphere-beta.vercel.app/community/leave/${id}`,{userId});
   }
   return (
     <div>

@@ -6,7 +6,7 @@ function JoinedComm({ user }) {
   let id = user?.id;
   let [joinedCommunity, setJoinedCommunity] = useState([]);
   let getJoinedComm = async () => {
-    let response = await axios.get("http://localhost:8000/community/joined", {
+    let response = await axios.get("https://collab-sphere-beta.vercel.app/community/joined", {
       params: { id },
     });
     setJoinedCommunity(response.data);

@@ -10,7 +10,7 @@ function Leader({ user }) {
   useEffect(() => {
     async function getLeaderBoard() {
       try {
-        const response = await axios.get('http://localhost:8000/leader');
+        const response = await axios.get('https://collab-sphere-beta.vercel.app/leader');
         setLeader(response.data); // Assuming the response.data is an array
       } catch (error) {
         console.error("Error fetching leaderboard:", error);

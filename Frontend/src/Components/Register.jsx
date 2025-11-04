@@ -39,7 +39,7 @@ function Register({user,setUser}) {
     formData.append('skills', JSON.stringify(skills));
     formData.append('reg', reg);
     try {
-      const response = await axios.post('http://localhost:8000/new/profile', formData, {
+      const response = await axios.post('https://collab-sphere-beta.vercel.app/new/profile', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }

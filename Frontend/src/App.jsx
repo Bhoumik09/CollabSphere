@@ -18,7 +18,7 @@ function App() {
 
   useEffect(() => {
     const getUser = () => {
-      fetch("http://localhost:8000/auth/login/success", {
+      fetch("https://collab-sphere-beta.vercel.app/auth/login/success", {
         method: "GET",
         credentials: "include",
         headers: {
@@ -50,7 +50,6 @@ function App() {
     };
     getUser();
   }, [user]);
-  console.log(user);
   return (
     <div>
        <Routes>

@@ -13,7 +13,7 @@ function ParticipantsComm({ user }) {
   };
   let getPartList = async () => {
     let response = await axios.get(
-      `http://localhost:8000/community/joined/${id}/members`
+      `https://collab-sphere-beta.vercel.app/community/joined/${id}/members`
     );
     console.log(response);
     setParticipantsList(response?.data);

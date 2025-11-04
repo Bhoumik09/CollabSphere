@@ -37,7 +37,7 @@ function Features({user}) {
     const name = nameRef.current.value;
     const email = emailRef.current.value;
     const message = messageRef.current.value;
-    await axios.post("http://localhost:8000/feedback", {
+    await axios.post("https://collab-sphere-beta.vercel.app/feedback", {
       name,
       email,
       message,

@@ -17,11 +17,11 @@ function Profile({ user }) {
   useEffect(() => {
     const getProfile = async () => {
       try {
-        const response = await axios.get(`http://localhost:8000/user/${id}`);
+        const response = await axios.get(`https://collab-sphere-beta.vercel.app/user/${id}`);
         SetUserInfo(response);
 
         // Fetch projects for the user
-        const projectsResponse = await axios.get(`http://localhost:8000/project?userId=${id}`);
+        const projectsResponse = await axios.get(`https://collab-sphere-beta.vercel.app/project?userId=${id}`);
         setProjects(projectsResponse.data);
       } catch (error) {
         console.error('Error fetching profile or projects:', error);

@@ -25,11 +25,11 @@ function ProjectMain({ user }) {
       setTimeout(async () => {
         let response;
         if (present === "project") {
-          response = await axios.get("http://localhost:8000/project", {
+          response = await axios.get("https://collab-sphere-beta.vercel.app/project", {
             params: { userId: id },
           });
         } else {
-          response = await axios.get("http://localhost:8000/project/all");
+          response = await axios.get("https://collab-sphere-beta.vercel.app/project/all");
         }
         SetProject(response.data);
         setShowProjects(true);

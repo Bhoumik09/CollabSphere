@@ -22,7 +22,7 @@ function Lists({ user }) {
     e.preventDefault();
     const search = searchRef.current.value;
     try {
-      const response = await axios.get("http://localhost:8000/find/user", {
+      const response = await axios.get("https://collab-sphere-beta.vercel.app/find/user", {
         params: { search },
       });
       console.log(response.data);
@@ -35,7 +35,7 @@ function Lists({ user }) {
   useEffect(() => {
     const getCommunity = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/community/all");
+        const response = await axios.get("https://collab-sphere-beta.vercel.app/community/all");
         
         setCommunity(response.data);
       } catch (error) {

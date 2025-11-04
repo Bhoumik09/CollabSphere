@@ -14,7 +14,7 @@ function SeeMore() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8000/project/${id}?last=${last}`
+          `https://collab-sphere-beta.vercel.app/project/${id}?last=${last}`
         );
         SetRequestArr(response.data.reqArr);
       } catch (error) {
